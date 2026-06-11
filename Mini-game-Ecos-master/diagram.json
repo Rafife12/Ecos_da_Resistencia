@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -224,
+      "left": -119.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 265.4,
+      "left": -144,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 275,
+      "left": -48,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 265.4,
+      "left": 67.2,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 265.4,
+      "left": 192,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 60,
+      "left": -238.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-76.8", "v153.6", "h292.76" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h-38.4", "v384.1" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "v-153.4", "h432", "v403.2" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "v-124.5", "h403.2", "v336" ] ],
+    [ "bz1:2", "esp:27", "green", [ "h201.05" ] ],
+    [ "bz1:1", "esp:GND.1", "green", [ "v0" ] ],
+    [ "btn1:1.l", "esp:32", "green", [ "h-19.2", "v-192" ] ],
+    [ "btn2:1.l", "esp:33", "green", [ "h-19.2", "v-182.4" ] ],
+    [ "btn3:1.l", "esp:25", "green", [ "h-105.6", "v-172.8" ] ],
+    [ "btn4:1.l", "esp:26", "green", [ "h-211.2", "v-163.2" ] ],
+    [ "btn1:2.r", "esp:GND.3", "green", [ "h0.2", "v-211", "h172.8" ] ],
+    [ "btn2:2.r", "esp:GND.3", "green", [ "h9.8", "v-220.6" ] ],
+    [ "btn3:2.r", "esp:GND.3", "green", [ "h9.8", "v-211" ] ],
+    [ "btn4:2.r", "esp:GND.3", "green", [ "h19.4", "v-211" ] ]
+  ],
+  "dependencies": {}
+}
